@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-labelledby="t d">
+  <title id="t">SIMD benchmark matrix</title>
+  <desc id="d">SIMD benchmarks vary three dimensions: input size around the vector width, memory alignment including byte offsets, cache-line and page splits and 4K aliasing, and data patterns such as match position, all-true, all-false or random masks, and NaN or infinity. The whole matrix runs once per instruction set: SSE, AVX2 and AVX-512.</desc>
+  <style>
+    text { font-family: "Source Sans 3", "Source Sans Pro", "Segoe UI", Helvetica, Arial, sans-serif; fill: #1E3640; }
+    .h { font-size: 27px; font-weight: 700; }
+    .b { font-size: 21px; }
+    .w { fill: #FFFFFF; }
+    .col { fill: #FFFFFF; stroke: #1F3F4D; stroke-width: 2; }
+    .chip { fill: #C0C0C0; }
+    .x { font-size: 44px; font-weight: 700; fill: #1F3F4D; }
+  </style>
+  <rect width="1200" height="600" rx="16" fill="#E7E7E7"/>
+  <text x="40" y="58" class="h" style="font-size:30px">Test where SIMD code breaks: three dimensions per function</text>
+
+  <rect x="40" y="100" width="330" height="330" rx="12" class="col"/>
+  <text x="205" y="145" text-anchor="middle" class="h">Input size</text>
+  <text x="205" y="175" text-anchor="middle" class="b">around the vector width</text>
+  <rect x="65" y="200" width="280" height="44" rx="8" class="chip"/><text x="205" y="229" text-anchor="middle" class="b">full vector − 1 / + 1</text>
+  <rect x="65" y="256" width="280" height="44" rx="8" class="chip"/><text x="205" y="285" text-anchor="middle" class="b">unrolled loop − 1 / + 1</text>
+  <rect x="65" y="312" width="280" height="44" rx="8" class="chip"/><text x="205" y="341" text-anchor="middle" class="b">odd sizes</text>
+
+  <text x="400" y="285" text-anchor="middle" class="x">×</text>
+
+  <rect x="430" y="100" width="340" height="330" rx="12" class="col"/>
+  <text x="600" y="145" text-anchor="middle" class="h">Memory alignment</text>
+  <text x="600" y="175" text-anchor="middle" class="b">where the data sits</text>
+  <rect x="455" y="200" width="290" height="44" rx="8" class="chip"/><text x="600" y="229" text-anchor="middle" class="b">every byte offset in a vector</text>
+  <rect x="455" y="256" width="290" height="44" rx="8" class="chip"/><text x="600" y="285" text-anchor="middle" class="b">64 B cache-line split</text>
+  <rect x="455" y="312" width="290" height="44" rx="8" class="chip"/><text x="600" y="341" text-anchor="middle" class="b">4 KB page split</text>
+  <rect x="455" y="368" width="290" height="44" rx="8" class="chip"/><text x="600" y="397" text-anchor="middle" class="b">buffers 4 KB apart (aliasing)</text>
+
+  <text x="800" y="285" text-anchor="middle" class="x">×</text>
+
+  <rect x="830" y="100" width="330" height="330" rx="12" class="col"/>
+  <text x="995" y="145" text-anchor="middle" class="h">Data patterns</text>
+  <text x="995" y="175" text-anchor="middle" class="b">what the data looks like</text>
+  <rect x="855" y="200" width="280" height="44" rx="8" class="chip"/><text x="995" y="229" text-anchor="middle" class="b" style="font-size:18px">match at start / mid / end / none</text>
+  <rect x="855" y="256" width="280" height="44" rx="8" class="chip"/><text x="995" y="285" text-anchor="middle" class="b">masks: all-true / all-false</text>
+  <rect x="855" y="312" width="280" height="44" rx="8" class="chip"/><text x="995" y="341" text-anchor="middle" class="b">random masks</text>
+  <rect x="855" y="368" width="280" height="44" rx="8" class="chip"/><text x="995" y="397" text-anchor="middle" class="b">NaN and infinity</text>
+
+  <text x="600" y="490" text-anchor="middle" class="h">… run once per instruction set</text>
+  <rect x="270" y="515" width="200" height="56" rx="10" fill="#1F3F4D"/><text x="370" y="551" text-anchor="middle" class="h w">SSE</text>
+  <rect x="500" y="515" width="200" height="56" rx="10" fill="#1F3F4D"/><text x="600" y="551" text-anchor="middle" class="h w">AVX2</text>
+  <rect x="730" y="515" width="200" height="56" rx="10" fill="#1F3F4D"/><text x="830" y="551" text-anchor="middle" class="h w">AVX-512</text>
+</svg>
