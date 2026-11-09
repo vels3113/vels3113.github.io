@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="t d">
+  <title id="t">CPU-time-weighted benchmark coverage</title>
+  <desc id="d">Production perf profiles give self samples per function. A coverage build of the benchmark suite with llvm-cov gives the list of functions the benchmarks execute. Combining them gives coverage weighted by CPU time, and the uncovered hot functions, sorted by their share, form the backlog for new benchmarks.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1F3F4D"/></marker>
+  </defs>
+  <style>
+    text { font-family: "Source Sans 3", "Source Sans Pro", "Segoe UI", Helvetica, Arial, sans-serif; fill: #1E3640; }
+    .h { font-size: 26px; font-weight: 700; }
+    .b { font-size: 21px; }
+    .s { font-size: 19px; fill: #3D5A66; }
+    .w { fill: #FFFFFF; }
+    .box { fill: #FFFFFF; stroke: #1F3F4D; stroke-width: 2; }
+    .line { stroke: #1F3F4D; stroke-width: 2.5; fill: none; marker-end: url(#a); }
+  </style>
+  <rect width="1200" height="520" rx="16" fill="#E7E7E7"/>
+  <text x="40" y="58" class="h" style="font-size:30px">Cover the code customers run</text>
+
+  <rect x="40" y="100" width="360" height="150" rx="12" class="box"/>
+  <text x="220" y="145" text-anchor="middle" class="h">Production profiles</text>
+  <text x="220" y="182" text-anchor="middle" class="b">perf on customer workloads</text>
+  <text x="220" y="214" text-anchor="middle" class="s">self samples per function</text>
+
+  <rect x="40" y="300" width="360" height="150" rx="12" class="box"/>
+  <text x="220" y="345" text-anchor="middle" class="h">Benchmark coverage</text>
+  <text x="220" y="382" text-anchor="middle" class="b">llvm-cov on a coverage build</text>
+  <text x="220" y="414" text-anchor="middle" class="s">functions the benchmarks execute</text>
+
+  <path d="M400,175 H450 V265 H486" class="line"/>
+  <path d="M400,375 H450 V285 H486" class="line"/>
+
+  <rect x="490" y="200" width="320" height="150" rx="12" fill="#1F3F4D"/>
+  <text x="650" y="248" text-anchor="middle" class="h w">Weighted coverage</text>
+  <text x="650" y="284" text-anchor="middle" class="b w">share of self samples</text>
+  <text x="650" y="312" text-anchor="middle" class="b w">in covered functions</text>
+
+  <path d="M810,275 H856" class="line"/>
+
+  <rect x="860" y="100" width="300" height="350" rx="12" class="box"/>
+  <text x="1010" y="145" text-anchor="middle" class="h">Benchmark backlog</text>
+  <text x="1010" y="175" text-anchor="middle" class="s">uncovered, sorted by share</text>
+  <g>
+    <rect x="885" y="200" width="250" height="38" rx="6" fill="#C0C0C0"/><rect x="885" y="200" width="220" height="38" rx="6" fill="#1F3F4D" opacity="0.35"/><text x="900" y="226" class="b">hot function A</text>
+    <rect x="885" y="250" width="250" height="38" rx="6" fill="#C0C0C0"/><rect x="885" y="250" width="160" height="38" rx="6" fill="#1F3F4D" opacity="0.35"/><text x="900" y="276" class="b">hot function B</text>
+    <rect x="885" y="300" width="250" height="38" rx="6" fill="#C0C0C0"/><rect x="885" y="300" width="110" height="38" rx="6" fill="#1F3F4D" opacity="0.35"/><text x="900" y="326" class="b">function C</text>
+    <rect x="885" y="350" width="250" height="38" rx="6" fill="#C0C0C0"/><rect x="885" y="350" width="60" height="38" rx="6" fill="#1F3F4D" opacity="0.35"/><text x="900" y="376" class="b">…</text>
+  </g>
+  <text x="1010" y="428" text-anchor="middle" class="s">bar = share of CPU time</text>
+
+  <text x="490" y="400" class="s">0% at start → 10% after two months,</text>
+  <text x="490" y="426" class="s">all in the hottest functions</text>
+</svg>

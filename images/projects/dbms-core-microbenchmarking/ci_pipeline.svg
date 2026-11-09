@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-labelledby="t d">
+  <title id="t">CI performance testing pipeline</title>
+  <desc id="d">A pull request waits in a queue for a bare-metal runner with fixed CPU frequency and turbo boost off. Google Benchmark runs warm-up and repetitions, then median and worst-case runtimes are compared with a stored baseline within a 5 percent margin. The result either passes or is flagged for extra review; rewriting the baseline needs a second approval.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1F3F4D"/></marker>
+  </defs>
+  <style>
+    text { font-family: "Source Sans 3", "Source Sans Pro", "Segoe UI", Helvetica, Arial, sans-serif; fill: #1E3640; }
+    .h { font-size: 26px; font-weight: 700; }
+    .b { font-size: 21px; }
+    .s { font-size: 19px; fill: #3D5A66; }
+    .w { fill: #FFFFFF; }
+    .box { fill: #FFFFFF; stroke: #1F3F4D; stroke-width: 2; }
+    .dark { fill: #1F3F4D; }
+    .line { stroke: #1F3F4D; stroke-width: 2.5; fill: none; marker-end: url(#a); }
+  </style>
+  <rect width="1200" height="560" rx="16" fill="#E7E7E7"/>
+  <text x="40" y="58" class="h" style="font-size:30px">Every pull request gets a performance check</text>
+
+  <rect x="40" y="110" width="200" height="150" rx="12" class="box"/>
+  <text x="140" y="165" text-anchor="middle" class="h">Pull request</text>
+  <text x="140" y="200" text-anchor="middle" class="s">release preset</text>
+  <text x="140" y="228" text-anchor="middle" class="s">build</text>
+
+  <rect x="290" y="110" width="200" height="150" rx="12" class="box"/>
+  <text x="390" y="165" text-anchor="middle" class="h">Queue</text>
+  <text x="390" y="200" text-anchor="middle" class="s">one run at a time</text>
+  <text x="390" y="228" text-anchor="middle" class="s">on the server</text>
+
+  <rect x="540" y="110" width="270" height="150" rx="12" class="dark"/>
+  <text x="675" y="160" text-anchor="middle" class="h w">Bare-metal runner</text>
+  <text x="675" y="198" text-anchor="middle" class="b w">fixed CPU frequency</text>
+  <text x="675" y="228" text-anchor="middle" class="b w">turbo boost off</text>
+
+  <rect x="860" y="110" width="300" height="150" rx="12" class="box"/>
+  <text x="1010" y="160" text-anchor="middle" class="h">Google Benchmark</text>
+  <text x="1010" y="198" text-anchor="middle" class="b">1,000+ benchmarks</text>
+  <text x="1010" y="228" text-anchor="middle" class="s">warm-up, repetitions, &lt;10 min</text>
+
+  <path d="M240,185 H284" class="line"/>
+  <path d="M490,185 H534" class="line"/>
+  <path d="M810,185 H854" class="line"/>
+  <path d="M1010,260 V300 H675 V318" class="line"/>
+
+  <rect x="440" y="322" width="470" height="110" rx="12" class="box"/>
+  <text x="675" y="362" text-anchor="middle" class="h">Compare with stored baseline</text>
+  <text x="675" y="398" text-anchor="middle" class="b">median and worst-case runtime within ±5%</text>
+
+  <path d="M440,377 H330 V448" class="line"/>
+  <path d="M910,377 H965 V448" class="line"/>
+
+  <rect x="150" y="452" width="360" height="80" rx="12" class="box"/>
+  <text x="330" y="488" text-anchor="middle" class="h">Within margin</text>
+  <text x="330" y="517" text-anchor="middle" class="s">pass</text>
+
+  <rect x="750" y="452" width="430" height="80" rx="12" class="dark"/>
+  <text x="965" y="485" text-anchor="middle" class="h w">Slower: flag for extra review</text>
+  <text x="965" y="516" text-anchor="middle" class="s w">baseline rewrite needs a second approval</text>
+
+  <text x="40" y="300" class="s">run-to-run variance &lt; 1%</text>
+</svg>
